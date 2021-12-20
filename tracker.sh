@@ -38,7 +38,10 @@ function screenshot_loop() {
         if [ ! -f /tmp/trackerpause ]; then
             ts=$(date +"%H%M%S")
             targetdir="${dailydir}/${ts}.jpeg"
-            scrot -q "${quality}" -m -z -p "${targetdir}"
+            # scrot -q "${quality}" -m -z -p "${targetdir}"
+            # This will need to be"
+            # screencapture -D 1 (display 1, followed by -D 2), [-x (don't play sounds) ?], -C include cursor  "${targetdir}"
+            # may need to screencapture calls, or maybe can use -R to define a rect capture area
         fi
         sleep $screenint
     done
